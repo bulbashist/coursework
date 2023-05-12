@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  background-color: white;
+  cursor: pointer;
+}
+
+.getjtyjrhe {
+  background-color: rgb(176, 219, 205);
+  height: f;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 100vh;
+  padding: 20px 40px;
+  text-align: center;
+  background-color: rgba(235, 235, 235, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: aqua;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+  height: 10px;
+  border-radius: 5px;
+}
