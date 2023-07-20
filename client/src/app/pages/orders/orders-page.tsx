@@ -9,7 +9,7 @@ import {
   ProductsBlock,
 } from "./styles";
 import { OrderStatus } from "./types";
-import { DeleteBtn } from "../../../g-styles";
+import { DeleteBtn } from "../../styles/g-styles";
 import { connection } from "../../services/ws-connection";
 import Header from "../../components/header/header";
 import { getMediaUri } from "../../services/get-media";

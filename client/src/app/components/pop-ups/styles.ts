@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { BaseShadow } from "../../styles/g-styles";
 
 export const BlurLock = styled.div`
   position: absolute;
@@ -18,10 +19,9 @@ export const AuthWindow = styled.div`
   left: calc(50% - 150px);
   width: 300px;
   height: 300px;
-  border-radius: 30px;
   padding: 20px 40px;
   background-color: white;
-  box-shadow: 2px 2px 5px grey;
+  ${BaseShadow}
 `;
 
 export const Form = styled.form`

@@ -1,14 +1,14 @@
-// import { ProductsToOrders } from 'src/orders/entities/order.entity';
 import { ProductsToOrders } from 'src/orders/entities/order.entity';
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { ProductCategory } from './utility-types';
 
 @Entity()
 export class Product {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ nullable: true })
-  category: number;
+  @Column({ nullable: true, type: 'int' })
+  category: ProductCategory;
 
   @Column()
   name: string;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { BaseShadow, CSSColors } from "../../../../styles/g-styles";
 
 export const AsideMenu = styled.aside``;
 
@@ -8,7 +9,7 @@ export const List = styled.ul`
   gap: 5px;
 
   .active {
-    background-color: rgba(176, 219, 205, 0.8);
+    background-color: ${CSSColors.Green};
     transform: translate(40px);
   }
 `;
@@ -22,14 +23,12 @@ export const ListElement = styled.li`
   box-sizing: border-box;
   width: 100%;
   height: 100px;
-  border-radius: 15px;
   padding: 1.5em;
   font-size: 12px;
   word-wrap: break-word;
-  // word-break: break-all;
   transition: translate 1s linear;
   background-color: rgba(255, 255, 255, 0.8);
-  box-shadow: 2px 2px 5px grey;
+  ${BaseShadow}
   cursor: pointer;
 
   &:not(.active):hover {

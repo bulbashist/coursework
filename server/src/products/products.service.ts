@@ -5,20 +5,6 @@ import { Product } from './entities/product.entity';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 
-enum Category {
-  COFFEE,
-  NOTCOFFEE,
-}
-
-export interface IProduct {
-  id: number;
-  category?: Category;
-  name?: string;
-  price: number;
-  compound?: string;
-  media?: string;
-}
-
 @Injectable()
 export class ProductsService {
   constructor(

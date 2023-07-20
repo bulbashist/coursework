@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ApperanceAnimation, BaseShadow } from "../../styles/g-styles";
 
 export const Product = styled.li`
   align-self: stretch;
@@ -7,18 +8,18 @@ export const Product = styled.li`
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  border-radius: 20px;
+  flex-basis: 150px;
   padding: 15px 20px;
-  box-shadow: 5px 3px 2px grey;
+  ${BaseShadow}
+  animation: ${ApperanceAnimation} 0.5s;
   cursor: pointer;
-  width: 150px;
 `;
 
 export const Header = styled.h3`
   flex-grow: 1;
   box-sizing: border-box;
   width: 100%;
-  font-size: 16px;
+  font: normal 500 15px/24px Arial;
   word-wrap: break-word;
 `;
 

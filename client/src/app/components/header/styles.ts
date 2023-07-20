@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { BaseShadow } from "../../styles/g-styles";
 
 export const BaseHeader = styled.header`
   display: flex;
@@ -6,23 +7,21 @@ export const BaseHeader = styled.header`
   align-items: center;
   gap: 4em;
   box-sizing: border-box;
-  min-height: 4em;
-  margin-bottom: 20px;
-  border: 2px solid black;
-  padding: 1em 2em;
+  min-height: 8vh;
+  margin-bottom: 2vh;
+  ${BaseShadow}
+  padding: 1vh 2em;
 `;
 
 export const BackBtn = styled.button`
   aspect-ratio: 1 / 1;
   align-self: center;
-  width: 3.5em;
-  height: 3.5em;
-  border: 2px solid black;
-  border-radius: 50%;
-  // padding: 1em;
+  width: 4em;
+  height: 3em;
   box-sizing: border-box;
   text-align: center;
   line-height: 1em;
+  ${BaseShadow}
 `;
 
 export const NavBlock = styled.nav`
@@ -44,7 +43,6 @@ export const AuthBlock = styled.div`
 `;
 
 export const AuthBtn = styled.button`
-  border: 2px solid black;
-  border-radius: 1.5em;
+  ${BaseShadow}
   padding: 1em;
 `;

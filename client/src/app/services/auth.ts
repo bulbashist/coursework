@@ -1,9 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { store } from "../store";
 
 type AuthState = {
   id: number | null;
-  handler: NodeJS.Timeout | undefined;
   login: string | null;
   accessToken: string | null;
 };
@@ -12,10 +10,8 @@ const slice = createSlice({
   name: "auth",
   initialState: {
     id: null,
-    handler: undefined,
     login: null,
     accessToken: null,
-    // refreshToken: null,
   } as AuthState,
   reducers: {
     getTokens: (state) => {
@@ -25,28 +21,19 @@ const slice = createSlice({
       const accessToken = localStorage.getItem("accessToken");
       return { ...state, id, login, accessToken };
     },
-    authorize: (
-      state: AuthState,
-      action: PayloadAction<Pick<AuthState, "id" | "login" | "accessToken">>
-    ) => {
+    authorize: (_: AuthState, action: PayloadAction<AuthState>) => {
       const { id, login, accessToken } = action.payload;
       localStorage.setItem("id", id?.toString() ?? "");
       localStorage.setItem("login", login ?? "");
       localStorage.setItem("accessToken", accessToken ?? "");
-      // axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
-      // localStorage.setItem("refreshToken", refreshToken ?? "");
-      const handler = setTimeout(() => {
-        store.dispatch(unauthorize());
-      }, 1000 * 60 * 10);
 
-      return { ...state, handler, ...action.payload };
+      return action.payload;
     },
-    unauthorize: (state) => {
+    unauthorize: () => {
       localStorage.clear();
-      clearInterval(state.handler);
+
       return {
-        ...state,
-        handler: undefined,
+        id: null,
         accessToken: null,
         login: null,
       };

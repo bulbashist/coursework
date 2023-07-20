@@ -21,6 +21,7 @@ export class UsersService {
 
   async create(login: string, password: string) {
     const user = await this.findOne(login);
+
     if (user) return null;
 
     return this.userRepository.save({

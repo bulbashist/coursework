@@ -45,7 +45,6 @@ export class OrdersGateway implements OnGatewayConnection {
   ) {
     const order = await this.ordersService.create(createOrderDto);
     this.server.to('ADV_USERS').emit('createOrder', order);
-    console.log(order.id);
     socket.emit('createOrder', order.ticket);
   }
 
@@ -54,7 +53,6 @@ export class OrdersGateway implements OnGatewayConnection {
   @UseGuards(AuthGuard)
   async findAll(@ConnectedSocket() client: Socket) {
     const payload = await this.ordersService.findAll();
-    console.log(payload);
     client.emit('findAllOrders', payload);
   }
 

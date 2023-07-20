@@ -12,6 +12,9 @@ import { useDispatch } from "react-redux";
 import { resetCart } from "./slice";
 
 const CartPage = () => {
+  const products = useAppSelector((state) => state.cart);
+  const clientId = useAppSelector((state) => state.auth.id);
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -37,9 +40,6 @@ const CartPage = () => {
       } as CartOrderDTO);
     }
   };
-
-  const products = useAppSelector((state) => state.cart);
-  const clientId = useAppSelector((state) => state.auth.id);
 
   return (
     <>

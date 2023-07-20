@@ -43,7 +43,6 @@ class WSConnection {
 
   emit(event: string, ...args: any) {
     this.socket?.emit(event, ...args);
-    // this.close();
   }
 
   close() {

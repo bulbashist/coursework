@@ -24,8 +24,8 @@ const GoodsList = () => {
     setPageCount(Math.ceil(products.length / productsPerPage));
   }, [itemOffset, products, productsPerPage]);
 
-  const paginationHandler = (e: any) => {
-    const newOffset = (e.selected * productsPerPage) % products.length;
+  const paginationHandler = ({ selected }: { selected: number }) => {
+    const newOffset = (selected * productsPerPage) % products.length;
     setItemOffset(newOffset);
   };
 

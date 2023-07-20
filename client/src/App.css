@@ -15,23 +15,18 @@ button {
   cursor: pointer;
 }
 
-.getjtyjrhe {
-  background-color: rgb(176, 219, 205);
-  height: f;
-}
-
 .App {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   height: 100vh;
-  padding: 20px 40px;
+  padding: 1.5vh 40px;
   text-align: center;
   background-color: rgba(235, 235, 235, 0.8);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: aqua;
+  background-color: rgba(176, 219, 205, 0.8);
   border-radius: 10px;
 }
 
